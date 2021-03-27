@@ -8,7 +8,7 @@ $penulis = $_POST["writer_id"] ;
 $year = $_POST["year"];
 
 
-$sql = "INSERT INTO book_tb (name, category_id, witer_id,publication_year, img) VALUES ('$judul', $categori, $penulis, $year, '$gambar')";
+$sql = "INSERT INTO book_tb (name, category_id, writer_id,publication_year, img) VALUES ('$judul', $categori, $penulis, $year, '$gambar')";
 $res = $conn->query($sql);
 
 

@@ -15,7 +15,7 @@
         }
     </style>
 </head>
-<body class="bg-dark">
+<body class="bg-">
     <div class="container">
         <header class="row">
             <nav class="navbar">

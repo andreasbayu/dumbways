@@ -1,8 +1,7 @@
 <?php
     include 'head.php';
     include 'connection.php';
-    $cat = "SELECT id,name FROM category_tb";
-    $categories = $conn->query($cat);
+
     $wri = "SELECT * FROM wiriter_tb";
     $writers = $conn->query($wri);
 ?>
@@ -11,24 +10,40 @@
                 
             ?>
         <div class="row">
-            <form>
+            <form method="POST" action="insertbook.php">
                 <div class="form-group">
                     <label class="text-white">Judul</label>
-                    <input type="text" class="form-control" placeholder="judul">
+                    <input type="text" class="form-control" placeholder="judul" name="judul">
+                </div>
+                <div class="form-group">
+                    <label class="text-white">Nama Gambar</label>
+                    <input type="text" class="form-control" placeholder="gambar" name="year">
+                </div>
+                <div class="form-group">
+                    <label class="text-white">Year</label>
+                    <input type="text" class="form-control" placeholder="gambar" name="gambar">
                 </div>
                 <div class="form-group">
                     <label class="text-white">Kategori</label>
                     <select class="form-control" name="category_id" >
-                        <?php foreach($categories as $category) {?>
-                        <option value="<?php $category["id"]?>"><?php $category["name"]?></option>
+                        <?php 
+                            $cat = "SELECT * FROM category_tb";
+                            $categories = $conn->query($cat);
+                            foreach($categories as $category) {
+                        ?>
+                        <option value="<?= $category["id"]?>"><?= $category["name"]?></option>
                         <?php } ?>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label class="text-white">Nama</label>
+                    <label class="text-white">Nama Penulis</label>
                     <select class="form-control" name="writer_id" >
-                        <?php foreach($writers as $writer) {?>
-                        <option value="<?php $writer["id"]?>"><?php $writer["name"]?></option>
+                        <?php 
+                            $wir = "SELECT * FROM writer_tb";
+                            $writers = $conn->query($wir);
+                            foreach($writers as $writer) {
+                        ?>
+                        <option value="<?= $writer["id"]?>"><?= $writer["name"]?></option>
                         <?php } ?>
                     </select>
                 </div><br>

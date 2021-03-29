@@ -12,6 +12,11 @@
             color: white;
             padding-top: 8px;
             padding-bottom: 8px;
+            
+        }
+        h1 a {
+            text-decoration: none;
+            color: white;
         }
     </style>
 </head>
@@ -20,16 +25,16 @@
         <header class="row">
             <nav class="navbar">
                 <div class="container">
-                    <h1>Dumb Library</h1>
+                    <h1><a href="index.php">Dumb Library </a></h1>
                     <ul class="navbar">
                         <li class="nav-item">
                             <a class="nav-link text-danger" href="addbook.php">Add Book</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-danger" href="#">Add Category</a>
+                            <a class="nav-link text-danger" href="addcategory.php">Add Category</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-danger" href="#">Add Writer</a>
+                            <a class="nav-link text-danger" href="addwriter.php">Add Writer</a>
                         </li>
                     </ul>
                 </div>
